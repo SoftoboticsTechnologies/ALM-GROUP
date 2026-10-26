@@ -2,7 +2,15 @@
 (function () {
   "use strict";
 
+  // WhatsApp number in international format, digits only (country code + number, e.g. 919876543210)
+  var WHATSAPP_NUMBER = "910000000000";
+  var WHATSAPP_MESSAGE = "Hello ALM Group, I would like to know more about your businesses.";
+
   var body = document.body;
+
+  document.querySelectorAll(".whatsapp-float").forEach(function (a) {
+    a.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+  });
   var header = document.querySelector(".site-header");
 
   // Header background on scroll

@@ -379,9 +379,33 @@ section { padding: 100px 0; }
 .powered-by img { height: 22px; width: auto; display: block; transition: opacity .2s; }
 .powered-by:hover img { opacity: .85; }
 
-.back-to-top { position: fixed; right: 22px; bottom: 22px; width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: var(--navy-950); border: 0; cursor: pointer; display: grid; place-items: center; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all .3s; z-index: 90; }
+.back-to-top { position: fixed; right: 27px; bottom: 96px; width: 48px; height: 48px; border-radius: 50%; background: var(--gold); color: var(--navy-950); border: 0; cursor: pointer; display: grid; place-items: center; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all .3s; z-index: 90; }
 .back-to-top.show { opacity: 1; visibility: visible; transform: none; }
 .back-to-top svg { width: 20px; height: 20px; }
+
+/* Floating WhatsApp button — expands into a "Chat with us" pill on hover */
+.whatsapp-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 95; height: 58px; min-width: 58px; padding: 0 13px; border-radius: 999px;
+  background: #25d366; color: #fff; display: flex; align-items: center; justify-content: flex-end;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, .45); transition: box-shadow .3s, padding .35s ease;
+}
+.whatsapp-float:hover, .whatsapp-float:focus-visible { color: #fff; padding: 0 13px 0 22px; box-shadow: 0 14px 34px rgba(37, 211, 102, .55); }
+.whatsapp-float svg { width: 32px; height: 32px; flex: none; position: relative; z-index: 1; }
+.whatsapp-float::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: #25d366; animation: wa-pulse 2.4s ease-out infinite; }
+.whatsapp-float:hover::before, .whatsapp-float:focus-visible::before { animation: none; opacity: 0; }
+@keyframes wa-pulse { 0% { transform: scale(1); opacity: .55; } 100% { transform: scale(1.6); opacity: 0; } }
+.whatsapp-tip {
+  order: -1; position: relative; z-index: 1; white-space: nowrap; overflow: hidden;
+  max-width: 0; opacity: 0; margin-right: 0;
+  color: var(--navy-950); font-size: 1rem; font-weight: 600;
+  transition: max-width .35s ease, opacity .25s ease, margin .35s ease;
+}
+.whatsapp-float:hover .whatsapp-tip, .whatsapp-float:focus-visible .whatsapp-tip { max-width: 140px; opacity: 1; margin-right: 12px; }
+@media (max-width: 768px) {
+  .whatsapp-float { right: 14px; bottom: 14px; height: 52px; min-width: 52px; padding: 0 12px; }
+  .whatsapp-float svg { width: 28px; height: 28px; }
+  .whatsapp-tip { display: none; }
+}
 
 /* Cookie banner */
 .cookie-banner { position: fixed; left: 20px; right: 20px; bottom: 20px; max-width: 560px; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 22px 24px; z-index: 200; display: none; border-top: 3px solid var(--gold); }
@@ -471,11 +495,11 @@ section { padding: 100px 0; }
   .footer-credit .container { flex-direction: column; text-align: center; gap: 10px; }
   .site-footer .powered-by { padding-left: 0; border-left: 0; }
   .field input, .field select, .field textarea { font-size: 16px; } /* prevents iOS zoom on focus */
-  .cookie-banner { left: 12px; right: 12px; bottom: 12px; padding: 14px 16px; display: none; align-items: center; gap: 14px; }
+  .cookie-banner { left: 12px; right: 78px; bottom: 12px; padding: 14px 16px; display: none; align-items: center; gap: 14px; }
   .cookie-banner.show { display: flex; }
   .cookie-banner p { margin: 0; font-size: .8rem; line-height: 1.5; }
   .cookie-banner .btn { flex: none; padding: 9px 16px; font-size: .8rem; }
-  .back-to-top { right: 14px; bottom: 14px; width: 42px; height: 42px; }
+  .back-to-top { right: 19px; bottom: 80px; width: 42px; height: 42px; }
   .sub-nav a { padding: 13px 12px; font-size: .84rem; }
   .vertical-cta p { font-size: 1.15rem; }
   .cta-band { padding: 64px 0; }
