@@ -3,7 +3,7 @@
   "use strict";
 
   // WhatsApp number in international format, digits only (country code + number, e.g. 919876543210)
-  var WHATSAPP_NUMBER = "910000000000";
+  var WHATSAPP_NUMBER = "918092901111";
   var WHATSAPP_MESSAGE = "Hello ALM Group, I would like to know more about your businesses.";
 
   var body = document.body;
