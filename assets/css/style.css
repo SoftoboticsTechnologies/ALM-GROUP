@@ -84,6 +84,8 @@ ul { padding-left: 1.2em; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--white); white-space: nowrap; flex: none; }
 .brand:hover { color: var(--white); }
 .brand-logo { height: 58px; width: auto; display: block; }
+.site-header .brand { height: 100%; margin: 0; padding: 0; }
+.site-header .brand-logo { height: var(--header-h); margin: 0; padding: 0; }
 
 .main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 4px; }
 .main-nav a, .main-nav button.nav-toggle-sub {
@@ -539,7 +541,6 @@ section { padding: 100px 0; }
   .highlights div { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
   .highlights div:last-child { border-bottom: 0; }
   .vertical-cta { padding: 26px 22px; }
-  .brand-logo { height: 50px; }
   .split-media img { aspect-ratio: 4/3; }
   .scroll-cue { display: none; }
   .hero-sectors { margin-top: 40px; }
@@ -591,5 +592,4 @@ section { padding: 100px 0; }
 }
 @media (max-width: 360px) {
   .footer-grid { grid-template-columns: 1fr; }
-  .brand-logo { height: 44px; }
 }
