@@ -523,7 +523,11 @@ section { padding: 100px 0; }
 }
 @media (min-width: 1181px) { .main-nav .mobile-cta { display: none; } }
 @media (max-width: 768px) {
-  :root { --header-h: 70px; }
+  :root { --header-h: 88px; }
+  .site-header { position: absolute; }
+  .nav-open .site-header { position: fixed; }
+  .sub-nav { top: 0; }
+  html { scroll-padding-top: 16px; }
   section { padding: 72px 0; }
   .vertical { padding: 76px 0; }
   .grid-2, .grid-3, .grid-4, .detail-grid, .split, .vertical-head, .form-grid, .program, .highlights, .category-grid { grid-template-columns: 1fr; }
